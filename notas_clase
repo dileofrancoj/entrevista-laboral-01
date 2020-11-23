@@ -2,3 +2,24 @@ npm i mongodb
 npm i jsonwebtoken // passport
 npm i sha1 
 npm i dotenv
+npm i @hapi/joi
+npm i forever -g
+npm i artillery -> ssr
+
+middlewares
+models
+schemas
+utils
+
+
+Generador de claves privadas / publicas: Putty Gen
+
+Validacion:
+    schemas
+    middlewares
+
+
+Para documentar la API:
+https://apiblueprint.org/
+https://swagger.io/solutions/api-documentation/
+
