@@ -1,0 +1,4 @@
+npm i mongodb
+npm i jsonwebtoken // passport
+npm i sha1 
+npm i dotenv
