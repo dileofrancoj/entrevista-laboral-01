@@ -1,12 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const model = require("./../models/partidos");
-const { route } = require("../app");
-// All
-// Last
-// Fechas
-// Puntos acumulados
-
+const middlewares = require("./../middlewares/partidos");
 const all = (req, res) =>
   model
     .all()
@@ -29,8 +24,17 @@ const filter = async (req, res) => {
   }
 };
 
+const create = (req, res) =>
+  model
+    .create(req.body)
+    .then((response) => res.json(response))
+    .catch((e) => res.status(500).json(e));
+
+// if(req.body.golesAFavor != "" && req.body.golesEnContra != "")
+
 router.get("/filter", filter);
 router.get("/last", last);
 router.get("/all", all);
+router.post("/create", middlewares.create, create);
 
 module.exports = router;
